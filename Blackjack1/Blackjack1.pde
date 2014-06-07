@@ -15,6 +15,7 @@ PImage cards, cardBack;
 Karte k1;
 Blatt b;
 Hand dealer, player;
+Button hit;
 
 boolean dealerDran;
 boolean playerDran;
@@ -31,7 +32,7 @@ Map<String, Integer> farbmap = new HashMap<String, Integer>();
 Map<String, Integer> wertmap = new HashMap<String, Integer>();
 void setup() {
   size(600, 400);
-  PFont font = loadFont("SegoeUI-32.vlw");   // Font erzeugen und
+  PFont font = loadFont("SegoeUI-20.vlw");   // Font erzeugen und
   textFont(font);                            // als Textfont setzen
 
   fillMaps();
@@ -39,6 +40,7 @@ void setup() {
   cardBack =  loadImage("card_back.png");
   b = new Blatt();
   b.shuffle();
+  hit = new Button(500,100,40,25,"hit");
 }
 
 void draw() {
@@ -55,6 +57,8 @@ void draw() {
   player.nimm(b);
   dealer.display();
   player.display();
+  
+  hit.display();
 
   noLoop();
 }

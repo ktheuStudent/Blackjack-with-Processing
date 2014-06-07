@@ -20,13 +20,13 @@ public class Hand {
 
   public void display() {
     fill(0);
-    textSize(20);
+ //   textSize(20);
     text(bezeichnung, x, y-20);
     int xAbstand = 0;
     int yAbstand = 0;
     for (Karte k : hand) {
       k.display(x+xAbstand, y+yAbstand);
-      xAbstand+= 14;
+      xAbstand+= 16;
       yAbstand+= 40;
     }
   }
